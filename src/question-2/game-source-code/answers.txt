@@ -1,0 +1,53 @@
+Provide your answers in this file.
+
+a) 
+i) Game is part of presentation layer
+ii) GameBase is part of the logic layer
+iii) Menu is part of presentation and data access layers
+iv) Options is part of presentation and data access layer
+v) DrawText is part of presentation and data access layer
+vi) DrawObjects is part of presentation and data access layer
+vii) Screen is part of presentation layer
+viii) BulletsController is part of logic layer
+ix) Galaxian is part of logic layer
+x) CollisionDetector is part of logic layer
+
+b) The design breaks down the game into smaller modules and separated in such a 
+ way that they can be reused. It uses composition intensively. Class are arranged
+in such a way that the commonilites in game. This is seen in with th classes Menu, Options,
+ Screen, DrawObjects, DrawText, DisplayHelp which are part of the presentation layer and are
+not coupled to the logic of the game. This allows for the changing of the presentation framework
+without having much effect on the logic of the game.
+
+The logic of the game is also contained in classes such as Gamebase, GalaxianController, BulletController
+and CollisionDetector. The logic of the game can be changed without having to change the presentation layer.
+Also, having smaller functions and smaller classes as well makes changing game aspects and testing much easier.
+
+Also, the intensively use and operate on user defined types rathe than relying on a specific primitive type or
+framework. This should that the game is appropriately confirming to the layered approach as it separate these 
+two concerns indicated above.
+
+c)
+The class has long functions and has many concepts involved which includes:
+1 -creation of galaxians ( FlagShipsEscorts, FlagShips and Galaxians) 
+- this is when they create FlagShipsEscorts, FlagShips and Galaxians and store them in respective containers
+
+2 - selection of the diving galaxians
+- this involves randomly selection of diving galaxians and flaships
+ 
+3-movement of these galaxians
+- its a function which moves all galaxians after a specific galaxian container has been provided 
+
+4 -formation of these galaxians
+- involves setting up of the state of a diving glaxian to diving
+
+5- Death Handling
+- it also checks if a galaxian is dead or alive and delete it
+
+d)
+Galaxian does not have any states which remain constant. The flag is changed inside the implementation of the class
+and not by the clients. And all the data members are initialised inside the clases to zero and flag to false within
+the class. Therefore althought the states of the data members are chaning inside the class, the class does not preserve
+its invariants. 
+
+e) When classes are tightly coupled through inheritance (Using protected access specifiers) it is not acceptable to this principle
